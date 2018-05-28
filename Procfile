@@ -1,1 +1,1 @@
-web: java -jar target/pimax-server
+web: java -jar target/pimax-server-1.0.jar
