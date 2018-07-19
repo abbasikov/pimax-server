@@ -5,6 +5,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - echo $HELL
+      - echo $HELL
       - echo $IMAGE_REPO_NAME
       - echo $IMAGE_TAG
       - echo $AWS_ACCOUNT_ID
