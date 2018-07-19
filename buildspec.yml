@@ -4,16 +4,12 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
-      - echo $HELL
-      - echo $HELL
+      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - echo $IMAGE_REPO_NAME
       - echo $IMAGE_TAG
       - echo $AWS_ACCOUNT_ID
       - echo $AWS_DEFAULT_REGION
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-      - REPOSITORY_URI=639670031158.dkr.ecr.us-east-1.amazonaws.com/pimax-server
-      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
       - echo Build started on `date`
