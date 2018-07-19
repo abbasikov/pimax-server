@@ -4,6 +4,9 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
+      - echo $HELL
+      - echo $AWS_ACCOUNT_ID
+      - echo $AWS_DEFAULT_REGION
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
